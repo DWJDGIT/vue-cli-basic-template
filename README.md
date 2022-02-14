@@ -1,6 +1,6 @@
 # vue-cli-basic-template
-A template for basic architecture of vue
-Somethine I need to tell you is that this project is to build a basic architecture with servral function,  
+A template for basic architecture of vue,
+Something I need to tell you is that this project is to build a basic architecture with servral function,  
 you need to add what you want.
 
 ### what I have done:
