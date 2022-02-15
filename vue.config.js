@@ -1,19 +1,19 @@
-"use strict"
-const path = require("path")
+'use strict'
+const path = require('path')
 const defaultSettings = require('./src/settings.js')
 
 function resolve(dir) {
   return path.join(__dirname, dir)
 }
 
-const name = defaultSettings.title || "Basic webpack architecture"
+const name = defaultSettings.title || 'Basic webpack architecture'
 
 const port = process.env.port || process.env.npm_config_port || 9528
 
 module.exports = {
-  publicPath: "/",
-  outputDir: "dist",
-  assetsDir: "static",
+  publicPath: '/',
+  outputDir: 'dist',
+  assetsDir: 'static',
   lintOnSave: process.env.NODE_ENV === 'development',
   productionSourceMap: false,
   devServer: {
@@ -28,7 +28,7 @@ module.exports = {
   css: {
     loaderOptions: {
       postcss: {
-        loader: "postcss"
+        loader: 'postcss'
       }
     }
   },
@@ -36,14 +36,14 @@ module.exports = {
     name: name,
     resolve: {
       alias: {
-        '@': resolve("src")
+        '@': resolve('src')
       }
     }
   },
   chainWebpack: config => {
     config.plugin('preload').tap(() => [
       {
-        rel: "preload",
+        rel: 'preload',
         fileBlacklist: [/\.map$/, /hot-update\.js$/, /runtime\..*\.js$/],
         include: 'initial'
       }
