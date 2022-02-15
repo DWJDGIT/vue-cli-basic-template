@@ -28,7 +28,7 @@ module.exports = {
   css: {
     loaderOptions: {
       postcss: {
-        loader: "postcss-loader"
+        loader: "postcss"
       }
     }
   },
@@ -78,7 +78,7 @@ module.exports = {
           .end()
 
         config.optimization.splitChunks({
-          chunk: 'all',
+          chunks: 'all',
           cacheGroups: {
             libs: {
               name: 'chunk-libs',
@@ -96,12 +96,12 @@ module.exports = {
               test: resolve('src/components'),
               minChunks: 3,
               priority: 3,
-              reuseExisitingChunk: true
+              reuseExistingChunk: true
             }
           }
         })
 
-        config.optimazation.runtimeChunk('single')
+        config.optimization.runtimeChunk('single')
       }
     )
   }
